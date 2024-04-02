@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import crm.service.LoginService;
+
 @WebServlet(name = "loginServlet", urlPatterns = { "/login" })
 public class LoginServlet extends HttpServlet {
+	private LoginService loginService = new LoginService();	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/login.jsp").forward(req, resp);
@@ -18,6 +21,12 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+		
+		boolean isLogin = loginService.checkLogin(username, password);
+		System.out.println(isLogin);
+		
 		req.getRequestDispatcher("/login.jsp").forward(req, resp);
 
 	}

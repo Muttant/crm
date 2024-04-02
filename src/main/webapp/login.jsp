@@ -31,7 +31,7 @@
             <h2>
                 Hệ thống CRM
             </h2>
-            <form th:action="@{/login}" method="post" class="form">
+            <form th:action="http://localhost:8080/crm/login" method="post" class="form">
                 <div class="user-box">
                     <input type="email" name="username" placeholder="Email" required>
                 </div>
