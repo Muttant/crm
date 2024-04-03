@@ -95,10 +95,7 @@
                                                     class="btn btn-sm btn-primary">
                                                     Sửa
                                                 </a>
-                                                <a th:href="@{/role/delete(id=${role.id})}"
-                                                    class="btn btn-sm btn-danger">
-                                                    Xóa
-                                                </a>
+                                                <a class="btn btn-sm btn-danger btn-xoa" id-role = <%=role.getId() %>>Xóa</a>
                                             </td>
                                         </tr>
                                     
@@ -127,6 +124,7 @@
     <script src="./js/waves.js"></script>
     <!-- Custom Theme JS -->
     <script src="./js/custom.min.js"></script>
+    <script src="./js/roles.js"></script>
     <script>
         $(document).ready(function () {
             $('#example').DataTable();
