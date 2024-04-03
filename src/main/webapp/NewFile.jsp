@@ -42,7 +42,7 @@
 %>
 
 <body>
-    <div th:replace="./fragments/preloader :: preloader"></div>
+    <div th:replace="fragments/preloader :: preloader"></div>
     <div id="wrapper">
         <div th:replace="fragments/navigation :: navigation"></div>
         <div th:replace="fragments/header :: header"></div>
