@@ -18,4 +18,18 @@ $(document).ready(function() {
 				console.log(msg)
 			});
 	})
+	$('#btn-add-role').click(function(e) {
+		e.preventDefault()
+		var roleName = $("#roleName").val()
+		var desc = $("#desc").val()
+		
+		$.ajax({
+			method: "POST",
+			url: "http://localhost:8080/crm/api/role/add",
+			data: { roleName: roleName, desc: desc  }
+		})
+			.done(function(data) {
+				alert("them thanh cong")
+			});
+	})
 })

@@ -15,7 +15,7 @@ import crm.common.Constant;
 import crm.payload.ResponseData;
 import crm.service.RoleService;
 
-@WebServlet(name = "roleApi", urlPatterns = { Constant.URL_ROLE_DELETE, Constant.URL_ROLE_ADD })
+@WebServlet(name = "roleApi", urlPatterns = { Constant.URL_ROLE_API_DELETE, Constant.URL_ROLE_API_ADD })
 public class RoleApi extends HttpServlet {
 	private RoleService roleService = new RoleService();
 	private Gson gson = new Gson();
@@ -25,11 +25,11 @@ public class RoleApi extends HttpServlet {
 
 		String urlPath = req.getServletPath();
 		switch (urlPath) {
-		case Constant.URL_ROLE_DELETE: {
+		case Constant.URL_ROLE_API_DELETE: {
 
 			deleteRoles(req, resp);
 		}
-		case Constant.URL_ROLE_ADD: {
+		case Constant.URL_ROLE_API_ADD: {
 
 			addRoles(req, resp);
 		}
