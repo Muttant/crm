@@ -67,4 +67,28 @@ public class RoleRepository {
 		
 		return isDelete;
 	}
+	public int insertRole(String roleName, String desc) {
+		Connection connection = MySQLConnection.getConnection();
+		String query = "insert into roles(role_name, description) values (?,?)";
+		int isSuccess = 0;
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, roleName);
+			preparedStatement.setString(2, desc);
+			isSuccess = preparedStatement.executeUpdate();
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(connection!=null) connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return isSuccess;
+	}
 }

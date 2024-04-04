@@ -12,6 +12,9 @@ public class RoleService {
 		return roleRepository.getRole();
 	}
 
+	public boolean insertRole(String roleName, String desc) {
+		return roleRepository.insertRole(roleName, desc) > 0;
+	}
 	public boolean deleteRoleById(int id) {
 		return roleRepository.deleteRoleById(id) > 0 ? true : false;
 	}
